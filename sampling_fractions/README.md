@@ -13,7 +13,7 @@ k4run fcc_ee_samplingFraction_turbineECalEndcap_siminput.py
 
 with the following lines edited to match your configuration:
 
-\# Electron momentum in GeV
+\# Electron momentum in GeV  
 momentum = 40
 
 evtsvc.input = "root/allegro_v03_evts_10000_*sim.root"
@@ -32,11 +32,11 @@ For this procedure, one generates a large set of single-particle events (single 
 
 The resulting reconstructed events are then processed by the ROOT macro autoCalib_analytic_topo.C, as follows:
 
-TChain *t =  new TChain("events")
-t->Add(<set of reconstructed ntuples>)
-.L autoCalib_analytic_topo.C+
-autoCalib_analytic_topo a(t)
-a.Calibrate()
+TChain *t =  new TChain("events")  
+t->Add(<set of reconstructed ntuples>)  
+.L autoCalib_analytic_topo.C+  
+autoCalib_analytic_topo a(t)  
+a.Calibrate()  
 
 The result will be a file samplingFractionsAnalytic.txt that contains the calibration constants is a format that can be directly inserted into the reconstruction steering file.
 
