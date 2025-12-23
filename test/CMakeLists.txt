@@ -30,7 +30,6 @@ add_test(NAME HelloWorldAlg
                COMMAND k4run k4ProjectTemplate/options/createHelloWorld.py)
 
 add_test(NAME ctest_ECal_calib
-	       WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
                COMMAND ./ctest_ECal_calib.sh)
 	       
 	     
