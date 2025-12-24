@@ -1,6 +1,6 @@
-#ifndef autoCalib_analytic_topo_cxx
-#define autoCalib_analytic_topo_cxx
-#include "autoCalib_analytic_topo.h"
+#ifndef turbineECalEndcap_autoCalib_analytic_topo_cxx
+#define turbineECalEndcap_autoCalib_analytic_topo_cxx
+#include "turbineECalEndcap_autoCalib_analytic_topo.h"
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
@@ -38,7 +38,7 @@ int getLayer(uint64_t cellID) {
 
 
 
-void autoCalib_analytic_topo::Calibrate()
+void turbineECalEndcap_autoCalib_analytic_topo::Calibrate()
 {
 
   
@@ -163,7 +163,7 @@ void autoCalib_analytic_topo::Calibrate()
     }
   }
 
-  std::ofstream f_out("samplingFractionsAnalytic.txt");
+  std::ofstream f_out("turbineEcalEndcap_samplingFractionsAnalytic.txt");
   f_out << "ecalEndcapSamplingFraction = ";
   for (int i  =0 ; i < nLayers; i++) {
     float sf;

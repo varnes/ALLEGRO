@@ -2,8 +2,6 @@ import calo_init
 import json
 import math
 
-#python plot_samplingFraction.py /eos/user/b/brfranco/rootfile_storage/202011_condor_calib_5kEvt/calibration_output_pdgID_22_pMin_?_pMax_?_thetaMin_90_thetaMax_90.root 1 10 50 100 -r 1000 10000 50000 100000 --totalNumLayers 12 --preview -outputfolder plots_sampling_fraction_201124 --plotSFvsEnergy
-#python plot_samplingFraction.py /eos/user/b/brfranco/rootfile_storage/202011_condor_calib_5kEvt/calibration_output_pdgID_22_pMin_50000_pMax_50000_thetaMin_?_thetaMax_?.root 50 70 90 -r 50 70 90 --totalNumLayers 12 --preview -outputfolder plots_sampling_fraction_theta_50GeV --plotSFvsEnergy --theta
 calo_init.add_defaults()
 calo_init.parser.add_argument("--merge", help="merge layers", default = [1] * 98, nargs='+') # bin 0 is empty! (before calo)
 calo_init.parser.add_argument("-t","--title", default="Sampling fraction", help="Graph title", type=str)

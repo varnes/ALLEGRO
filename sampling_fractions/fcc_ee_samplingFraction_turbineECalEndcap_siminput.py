@@ -15,7 +15,6 @@ thetaMax = 50.
 
 from Configurables import k4DataSvc, PodioInput
 evtsvc = k4DataSvc('EventDataSvc')
-#evtsvc.input = "/home/evarnes/FCC/key4hep_fixconflict/k4geo/ALLEGRO_sim_edm4hep_10GeV_mu.root"
 evtsvc.input = "root/allegro_v03_evts_10000_*sim.root"
 podioevent  = k4DataSvc("EventDataSvc")
 

@@ -4,8 +4,8 @@
 // from TChain events/
 //////////////////////////////////////////////////////////
 
-#ifndef autoCalib_analytic_topo_h
-#define autoCalib_analytic_topo_h
+#ifndef turbineECalEndcap_autoCalib_analytic_topo_h
+#define turbineECalEndcap_autoCalib_analytic_topo_h
 
 #include <TROOT.h>
 #include <TChain.h>
@@ -17,7 +17,7 @@
 #include "podio/detail/LinkFwd.h"
 #include "edm4hep/ClusterData.h"
 
-class autoCalib_analytic_topo {
+class turbineECalEndcap_autoCalib_analytic_topo {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
@@ -79,7 +79,7 @@ public :
    TBranch        *b_GPStringKeys;   //!
    TBranch        *b_GPStringValues;   //!
 
-   autoCalib_analytic_topo(TTree *tree=0);
+   turbineECalEndcap_autoCalib_analytic_topo(TTree *tree=0);
    virtual Int_t    Cut(Long64_t entry);
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
@@ -91,8 +91,8 @@ public :
 
 #endif
 
-#ifdef autoCalib_analytic_topo_cxx
-autoCalib_analytic_topo::autoCalib_analytic_topo(TTree *tree) : fChain(0) 
+#ifdef turbineECalEndcap_autoCalib_analytic_topo_cxx
+turbineECalEndcap_autoCalib_analytic_topo::turbineECalEndcap_autoCalib_analytic_topo(TTree *tree) : fChain(0) 
 {
 
   Init(tree);
@@ -100,13 +100,13 @@ autoCalib_analytic_topo::autoCalib_analytic_topo(TTree *tree) : fChain(0)
 
 
 
-Int_t autoCalib_analytic_topo::GetEntry(Long64_t entry)
+Int_t turbineECalEndcap_autoCalib_analytic_topo::GetEntry(Long64_t entry)
 {
 // Read contents of entry.
    if (!fChain) return 0;
    return fChain->GetEntry(entry);
 }
-Long64_t autoCalib_analytic_topo::LoadTree(Long64_t entry)
+Long64_t turbineECalEndcap_autoCalib_analytic_topo::LoadTree(Long64_t entry)
 {
 // Set the environment to read one entry
    if (!fChain) return -5;
@@ -119,7 +119,7 @@ Long64_t autoCalib_analytic_topo::LoadTree(Long64_t entry)
    return centry;
 }
 
-void autoCalib_analytic_topo::Init(TTree *tree)
+void turbineECalEndcap_autoCalib_analytic_topo::Init(TTree *tree)
 {
    // The Init() function is called when the selector needs to initialize
    // a new tree or chain. Typically here the branch addresses and branch
@@ -181,7 +181,7 @@ void autoCalib_analytic_topo::Init(TTree *tree)
    Notify();
 }
 
-bool autoCalib_analytic_topo::Notify()
+bool turbineECalEndcap_autoCalib_analytic_topo::Notify()
 {
    // The Notify() function is called when a new file is opened. This
    // can be either for a new TTree in a TChain or when when a new TTree
@@ -192,18 +192,18 @@ bool autoCalib_analytic_topo::Notify()
    return true;
 }
 
-void autoCalib_analytic_topo::Show(Long64_t entry)
+void turbineECalEndcap_autoCalib_analytic_topo::Show(Long64_t entry)
 {
 // Print contents of entry.
 // If entry is not specified, print current entry
    if (!fChain) return;
    fChain->Show(entry);
 }
-Int_t autoCalib_analytic_topo::Cut(Long64_t entry)
+Int_t turbineECalEndcap_autoCalib_analytic_topo::Cut(Long64_t entry)
 {
 // This function may be called from Loop.
 // returns  1 if entry is accepted.
 // returns -1 otherwise.
    return 1;
 }
-#endif // #ifdef autoCalib_analytic_topo_cxx
+#endif // #ifdef turbineECalEndcap_autoCalib_analytic_topo_cxx
