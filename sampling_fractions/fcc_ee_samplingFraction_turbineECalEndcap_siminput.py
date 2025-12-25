@@ -52,8 +52,7 @@ hist = SamplingFractionInLayers("hists",
                                  OutputLevel = DEBUG)
 hist.deposits.Path = ecalEndcapHitsName
 
-#THistSvc().Output = ["rec DATAFILE='histSF_fccee_turbine_10GeV_mu.root' TYP='ROOT' OPT='RECREATE'"]
-THistSvc().Output = ["rec DATAFILE='histSF_fccee_turbine_40GeV_v09.root' TYP='ROOT' OPT='RECREATE'"] 
+THistSvc().Output = ["rec DATAFILE='histSF_fccee_turbineECalEndcap.root' TYP='ROOT' OPT='RECREATE'"] 
 THistSvc().PrintAll=True
 THistSvc().AutoSave=True
 THistSvc().AutoFlush=False
